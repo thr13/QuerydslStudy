@@ -1,11 +1,7 @@
 package com.querydsl.domain;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
+import lombok.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,4 +26,14 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
+
+    public Member(String username, int age) {
+        this.username = username;
+        this.age = age;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+        team.getMembers().add(this);
+    }
 }

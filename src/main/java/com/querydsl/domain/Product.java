@@ -29,4 +29,10 @@ public class Product {
 
     @OneToMany(mappedBy = "product")
     private List<Order> orders = new ArrayList<>();
+
+    public Product(String name, int price, int stockAmount) {
+        this.name = name;
+        this.price = price;
+        this.stockAmount = stockAmount;
+    }
 }

@@ -11,7 +11,7 @@ import java.util.List;
 
 @Getter
 @Entity
-@Table
+@Table(name = "products")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Product {
     @Id

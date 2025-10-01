@@ -29,4 +29,11 @@ public class Order {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
+
+    public Order(int orderAmount, Address address, Member member, Product product) {
+        this.orderAmount = orderAmount;
+        this.address = address;
+        this.member = member;
+        this.product = product;
+    }
 }

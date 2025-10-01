@@ -37,9 +37,7 @@ public class ProductRepository {
     public List<Product> searchProducts(String productName, Integer maxPrice) {
         return jpaQueryFactory
                 .selectFrom(product)
-                .where(nameContains(productName)
-                        .and(priceLoe(maxPrice))
-                )
+                .where(nameContains(productName), priceLoe(maxPrice))
                 .fetch();
     }
 

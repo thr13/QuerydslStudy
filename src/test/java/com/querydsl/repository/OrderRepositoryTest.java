@@ -25,18 +25,9 @@ class OrderRepositoryTest {
     @Autowired
     private OrderRepository orderRepository;
 
-    private Team teamA;
-    private Member memberA;
-    private Member memberB;
-    private Product productA;
-    private Product productB;
-    private Order orderA;
-    private Order orderB;
-    private Order orderC;
-
     @BeforeEach
     void before() {
-        teamA = new Team("TeamA");
+        Team teamA = new Team("TeamA");
         em.persist(teamA);
 
         Member memberA = new Member("memberA", 20);
